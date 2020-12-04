@@ -7,12 +7,12 @@ import {
 	Platform,
 	StatusBar,
 } from 'react-native';
-import WelcomeView from './screens/WelcomeView';
+import ChatRoomView from './screens/ChatRoom';
 
 export default function App() {
 	return (
 		<SafeAreaView style={styles.container}>
-			<WelcomeView />
+			<ChatRoomView />
 		</SafeAreaView>
 	);
 }
