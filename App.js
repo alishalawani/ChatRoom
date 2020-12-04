@@ -7,7 +7,7 @@ import {
 	Platform,
 	StatusBar,
 } from 'react-native';
-import ChatRoomView from './screens/ChatRoom';
+import ChatRoomView from './screens/ChatRoomView';
 
 export default function App() {
 	return (

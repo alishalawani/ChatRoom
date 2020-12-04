@@ -41,7 +41,122 @@ Later on we would need a button so let us talk about the Button element and it's
 
 - Since the Button element is limitedly customizable, we would be using the `TouchableOpacity` component nesting a `Text` element that would serve as the button title.
 
-### Using hooks, let us store some an array of messages in the component's state.
+### Displaying some messages
+Using hooks, let us store some an array of messages in the component's state.
 1. Import `useState` and add this to before your return statement 
     ```jsx
-    const [messages, setMessages] = useState(['I\'m currently studying react native', 'oh really, me too', 'it\s so fun', 'I should have learnt it sooner'])
+    	const [messages, setMessages] = useState([
+            "I'm currently studying react native",
+            'oh really, me too',
+            'its so fun',
+            'I should have learnt it sooner',
+        ]);
+2. Nest a `View` component inside of the `ImageBackground`.
+3. Inside of the `View`, Map through the messages, returning `Text` components containing the messages.
+4. Add an alignItems and a justifyContent, both given a value of `center`. To center the container of the messages.
+5. Add background color, marginBottom, and padding to the `Text`.
+6. Give the View component a width of 90%.
+Inside of the return statement of the component should look like this:
+```jsx
+<ImageBackground
+			source={require('../assets/background.jpg')}
+			style={styles.container}>
+			<View style={styles.messagesContainer}>
+				{messages.map((message, index) => {
+					return (
+						<Text key={index} style={styles.message}>
+							{message}
+						</Text>
+					);
+				})}
+			</View>
+		</ImageBackground>
+```
+Your style sheet should look like this
+```js
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	messagesContainer: { width: '90%' },
+	message: {
+		backgroundColor: 'white',
+		padding: 10,
+		marginBottom: 10,
+	},
+});
+```
+## Create a input box to send messages to the chat room
+1. Inside of the screens folder, create a functional component named `InputBox`. `touch InputBox.js`.
+2. In ChatRoomView, render the InputBox component under the messages, let it be the last thing in the ImageBackground.
+3. Pass down the `messages` and `setMessages` hooks as props to the InputBox component.
+4. In the InputBox Component, return a View component. and give it a height, width and background color, to see it's position.
+5. Give the ChatRoomView main container a flexDirection of `row`.
+6. Give the InputBox main container a alignSelf property with a value of `flex-end` and a absolute position, for it to stay at the bottom. 
+
+### Adding a text input to send messages
+Now that we can see the a where out input box will be placed, it's time to create it.
+1. Import the `TextInput` component from react-native and nest it inside of the View, in the InputBox Component.
+2. Import useState and add this hook before the return function, this would be for the new messages we post.
+```js
+const [newMessage, setNewMessage] = useState('Edit this message')
+```
+3. The TextInput component has an `onChangeText` property and a `value` property. The onChangeText property takes a callback that has the current textInput as a parameter. [View Doc for more](https://reactnative.dev/docs/textinput)
+
+4. The TextInput tag should look like this
+```jsx
+<TextInput
+    style={styles.textInput}
+    onChangeText={(text) => setNewMessage(text)}
+    value={newMessage}
+    multiline
+/>
+```
+Make your stylesheet should look like this
+```jsx
+const styles = StyleSheet.create({
+	container: {
+		height: 70,
+		width: '100%',
+		position: 'absolute',
+		alignSelf: 'flex-end',
+		paddingBottom: 5,
+	},
+	textInput: {
+		height: '100%',
+		width: '84%',
+		borderColor: 'black',
+		borderWidth: 1,
+        backgroundColor: 'white',
+        padding:10,
+        fontSize:18,
+        borderRadius:10,
+	},
+});
+```
+### Send Button Functionality
+ Now that we have our input box created We need to create the functionality of sending new messages.
+ 1. Add `flex:1` and `flexDirection:'row'` to the main Container, in the InputBox component.
+ 2. Import TouchOpacity and render it bellow the textInput and nest a Text that says 'send', inside of it.
+ 3. Give the button a color and center the text.
+ Your button should look like this
+ ```jsx
+ <TouchableOpacity
+    style={{
+        backgroundColor: 'dodgerblue',
+        width: '16%',
+        justifyContent: 'center',
+        alignItems:'center'
+    }}>
+    <Text style={{fontSize:20}}>send</Text>
+</TouchableOpacity>
+```
+4. Let us create a `handleSend` function that is going to be responsible for posting new messages to the chatRoom. 
+```jsx
+const handleSend = () => {
+	setMessages([...messages, newMessage]);
+}
+```
+5. Now, add an onPress property to the button/touchable and set it to the handleSend function 
