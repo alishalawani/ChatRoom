@@ -1,5 +1,5 @@
 # React Native Workshop
-Through this tutorial, we would be building a simple Chat Room app for both android and ios. We would be covering navigation in React Native, Flexbox, and using various react native APIs. No backend involved, all messages would be stored in state.
+Through this tutorial, we would be building a simple Chat Room app for both android and ios. We would be covering styling using Flexbox, and using various react native components. No backend involved, all messages would be stored in state.
 
 ### You can either fork and clone this repository or Follow the set up to start from scratch
 
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 	},
 });
 ```
-## Create a input box to send messages to the chat room
+## Create an input box to send messages to the chat room
 1. Inside of the screens folder, create a functional component named `InputBox`. `touch InputBox.js`.
 2. In ChatRoomView, render the InputBox component under the messages, let it be the last thing in the ImageBackground.
 3. Pass down the `messages` and `setMessages` hooks as props to the InputBox component.
