@@ -29,6 +29,5 @@ Through this tutorial, we would be building a simple Chat Room app for both andr
     }
 
     export default WelcomeView;
-```jsx
 
 5. To see what we have done so far, let's call the WelcomeView in App.js.
