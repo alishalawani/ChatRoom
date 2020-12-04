@@ -1,7 +1,7 @@
 # React Native Workshop
 Through this tutorial, we would be building a simple Chat Room app for both android and ios. We would be covering styling using Flexbox, and using various react native components. No backend involved, all messages would be stored in state.
 
-### You can either fork and clone this repository or Follow the set up to start from scratch
+### You can either fork and clone this repository and checkout to the `workshop` branch or Follow the set up to start from scratch
 
 ## Setting up your development environment
 1. With expo globally installed - from the command line run `expo init <NameOFApp>` in this case, `expo init ChatRoom` 
