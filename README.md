@@ -160,3 +160,12 @@ const handleSend = () => {
 }
 ```
 5. Now, add an onPress property to the button/touchable and set it to the handleSend function 
+
+Chat Room Done, Time to test it out, let's send a message!
+
+## Cool Stuff to explore
+* [Navigating Between Screens](https://reactnative.dev/docs/navigation#react-navigation).
+* [React Native Community hooks](https://github.com/react-native-community/hooks). 
+* Working with audio. Check out this [react native community audio-toolkit](https://www.npmjs.com/package/@react-native-community/audio-toolkit).
+
+I started with this React Native tutorial by [Programming With Mosh](https://www.youtube.com/watch?v=0-S5a0eXPoc). 
