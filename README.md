@@ -9,10 +9,9 @@ Through this tutorial, we would be building a simple Chat Room app for both andr
 3. Change into the new directory we just created `cd ChatRoom`.
 4. Create a folder named screens `mkdir screens`, in the root directory. This is were all our screens/views will be.
 
-### Let us talk about Styling in react native.
+### Let us talk about Styling in react native..
 [Layout in React Native Documentation](https://reactnative.dev/docs/flexbox)
-
-## Create a Welcome view
+## Creating our Chat Room
 ### Use an image as the background
 1. In the screens folder, `touch ChatRoomView.js`.
 2. Create a functional component, since we would be using hooks.
@@ -42,7 +41,7 @@ Later on we would need a button so let us talk about the Button element and it's
 - Since the Button element is limitedly customizable, we would be using the `TouchableOpacity` component nesting a `Text` element that would serve as the button title.
 
 ### Displaying some messages
-Using hooks, let us store some an array of messages in the component's state.
+Using hooks, let us store an array of messages in the component's state.
 1. Import `useState` and add this to before your return statement 
     ```jsx
     	const [messages, setMessages] = useState([
@@ -52,8 +51,8 @@ Using hooks, let us store some an array of messages in the component's state.
             'I should have learnt it sooner',
         ]);
 2. Nest a `View` component inside of the `ImageBackground`.
-3. Inside of the `View`, Map through the messages, returning `Text` components containing the messages.
-4. Add an alignItems and a justifyContent, both given a value of `center`. To center the container of the messages.
+3. Inside of the `View`, map through the messages, returning `Text` components containing the messages.
+4. Add an alignItems and a justifyContent, both given a value of `center`, to the View's style. To center the container of the messages.
 5. Add background color, marginBottom, and padding to the `Text`.
 6. Give the View component a width of 90%.
 Inside of the return statement of the component should look like this:
@@ -162,6 +161,11 @@ const handleSend = () => {
 5. Now, add an onPress property to the button/touchable and set it to the handleSend function 
 
 Chat Room Done, Time to test it out, let's send a message!
+
+### Extras you could do at your own
+- Make the app `prettier`
+- It would be cool to add a backend to this!
+- Let your creativity run wild :)
 
 ## Cool Stuff to explore
 * [Navigating Between Screens](https://reactnative.dev/docs/navigation#react-navigation).
