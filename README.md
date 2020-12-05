@@ -168,4 +168,6 @@ Chat Room Done, Time to test it out, let's send a message!
 * [React Native Community hooks](https://github.com/react-native-community/hooks). 
 * Working with audio. Check out this [react native community audio-toolkit](https://www.npmjs.com/package/@react-native-community/audio-toolkit).
 
+- There are a lot more react Native communities you will find out there!
+
 I started with this React Native tutorial by [Programming With Mosh](https://www.youtube.com/watch?v=0-S5a0eXPoc). 
